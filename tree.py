@@ -1,3 +1,4 @@
+# encoding = utf-8
 from queue import Queue
 
 class TreeNode():
@@ -17,11 +18,13 @@ class BinaryTree():
 			return None
 		
 		queue = Queue()
+		# 首先把根节点放到队列
 		queue.put(self.root)
 
+		# 队列不为空， 遍历左右节点
 		while queue.empty is not True:
 			node = queue.get()
-			print(str(node.val) + "  ")
+			print(str(node.val))
 			if (node.left != None):
 				queue.put(node.left)
 			if (node.right != None):
